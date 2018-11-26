@@ -83,3 +83,6 @@ moc_*.cxx
 *.so
 openmw.appdata.xml
 venv/
+
+## Morrowind Data
+/morrowind_data
