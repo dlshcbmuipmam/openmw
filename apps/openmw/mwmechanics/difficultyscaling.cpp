@@ -17,6 +17,10 @@ float scaleDamage(float damage, const MWWorld::Ptr& attacker, const MWWorld::Ptr
     difficultySetting = std::min(difficultySetting, 500);
     difficultySetting = std::max(difficultySetting, -500);
 
+    // Hard coded difficulty setting
+    int playerLevel = player.getClass().getCreatureStats(player).getLevel();
+    difficultySetting = playerLevel * 5;
+
     static const float fDifficultyMult = MWBase::Environment::get().getWorld()->getStore().get<ESM::GameSetting>().find("fDifficultyMult")->mValue.getFloat();
 
     float difficultyTerm = 0.01f * difficultySetting;
